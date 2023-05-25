@@ -46,10 +46,11 @@ class DeceptiveTrap(FitnessFunction):
 
     def evaluate(self, individual: Individual):
         num_subfunctions = self.dimensionality // self.trap_size
-        result = 0
-        for i in range(num_subfunctions):
-            result += self.trap_function(individual.genotype[i * self.trap_size:(i + 1) * self.trap_size])
-        individual.fitness = result
+        individual.fitness = sum(
+            self.trap_function(
+                individual.genotype[i * self.trap_size:(i + 1) * self.trap_size]
+            ) for i in range(num_subfunctions)
+        )
         super().evaluate(individual)
 
 
@@ -76,15 +77,15 @@ class MaxCut(FitnessFunction):
                 splt = line.split()
                 v0 = int(splt[0]) - 1
                 v1 = int(splt[1]) - 1
-                assert (v0 >= 0 and v0 < self.dimensionality)
-                assert (v1 >= 0 and v1 < self.dimensionality)
+                assert (0 <= v0 < self.dimensionality)
+                assert (0 <= v1 < self.dimensionality)
                 w = float(splt[2])
                 self.edge_list.append((v0, v1))
                 self.weights[(v0, v1)] = w
                 self.weights[(v1, v0)] = w
-                if (v0 not in self.adjacency_list):
+                if v0 not in self.adjacency_list:
                     self.adjacency_list[v0] = []
-                if (v1 not in self.adjacency_list):
+                if v1 not in self.adjacency_list:
                     self.adjacency_list[v1] = []
                 self.adjacency_list[v0].append(v1)
                 self.adjacency_list[v1].append(v0)
@@ -98,7 +99,7 @@ class MaxCut(FitnessFunction):
             self.value_to_reach = float(first_line[0])
 
     def get_weight(self, v0, v1):
-        if (not (v0, v1) in self.weights):
+        if not (v0, v1) in self.weights:
             return 0
         return self.weights[(v0, v1)]
 
@@ -106,12 +107,8 @@ class MaxCut(FitnessFunction):
         return len(adjacency_list(v))
 
     def evaluate(self, individual: Individual):
-        result = 0
-        for e in self.edge_list:
-            v0, v1 = e
-            w = self.weights[e]
-            if (individual.genotype[v0] != individual.genotype[v1]):
-                result += w
-
-        individual.fitness = result
+        individual.fitness = sum(
+            self.weights[edge] for edge in self.edge_list
+            if individual.genotype[edge[0]] != individual.genotype[edge[1]]
+        )
         super().evaluate(individual)
