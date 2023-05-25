@@ -100,7 +100,7 @@ class MaxCut(FitnessFunction):
 		return self.weights[(v0,v1)]
 
 	def get_degree( self, v ):
-		return len(adjacency_list(v))
+		return len(self.adjacency_list(v))
 
 	def evaluate( self, individual: Individual ):
 		result = 0
