@@ -27,7 +27,7 @@ if __name__ == "__main__":
             f.write("dimensionality, num_edges, population_size,success_rate, min, 10th_percentile,50th_percentile,90th_percentile, max\n")
             population_size = 500
             num_evaluations_list = []
-            num_runs = 1
+            num_runs = 10
             for i, inst in enumerate(filesIn):
                 print("\nInstance {}/{} \n".format(i+1,num_files_in))
                 num_success = 0
