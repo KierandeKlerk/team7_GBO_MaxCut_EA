@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     for cx in crossovers:
         print("\nCrossover: {}\n".format(cx))
-        file_out = "output-{}_.csv".format(cx, currentDT.strftime("%d-%m-%Y_%H-%M"))
+        file_out = "output-{}_{}.csv".format(cx, currentDT.strftime("%d-%m-%Y_%H-%M"))
         with open(os.path.join(dirOut,file_out),"w") as f:
             f.write("dimensionality, num_edges, population_size,success_rate, min, 10th_percentile,50th_percentile,90th_percentile, max\n")
             population_size = 500
