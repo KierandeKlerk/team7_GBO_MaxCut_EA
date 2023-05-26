@@ -15,7 +15,7 @@ def run_genetic_algorithm(run_params):
 
 if __name__ == "__main__":
     crossovers = ["UniformCrossover", "OnePointCrossover"]
-    set = "A"
+    set = "E"
     currentDT = datetime.datetime.now()
 
     dirOut = "output/set{}".format(set)
