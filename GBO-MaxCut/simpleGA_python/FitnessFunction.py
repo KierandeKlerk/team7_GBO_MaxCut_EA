@@ -16,44 +16,6 @@ class FitnessFunction:
             raise ValueToReachFoundException(individual)
 
 
-class OneMax(FitnessFunction):
-    def __init__(self, dimensionality):
-        super().__init__()
-        self.dimensionality = dimensionality
-        self.value_to_reach = dimensionality
-
-    def evaluate(self, individual: Individual):
-        individual.fitness = np.sum(individual.genotype)
-        super().evaluate(individual)
-
-
-class DeceptiveTrap(FitnessFunction):
-    def __init__(self, dimensionality):
-        super().__init__()
-        self.dimensionality = dimensionality
-        self.trap_size = 5
-        assert dimensionality % self.trap_size == 0, "Dimensionality should be a multiple of trap size"
-        self.value_to_reach = dimensionality
-
-    def trap_function(self, genotype):
-        assert len(genotype) == self.trap_size
-        k = self.trap_size
-        bit_sum = np.sum(genotype)
-        if bit_sum == k:
-            return k
-        else:
-            return k - 1 - bit_sum
-
-    def evaluate(self, individual: Individual):
-        num_subfunctions = self.dimensionality // self.trap_size
-        individual.fitness = sum(
-            self.trap_function(
-                individual.genotype[i * self.trap_size:(i + 1) * self.trap_size]
-            ) for i in range(num_subfunctions)
-        )
-        super().evaluate(individual)
-
-
 class MaxCut(FitnessFunction):
     def __init__(self, instance_file):
         super().__init__()
