@@ -63,14 +63,37 @@ class MaxCut(FitnessFunction):
         # Create a copy of the individual
         new_individual = individual.copy()
 
+        # Flip the node
+        new_individual.genotype[node_index] = 1 - new_individual.genotype[node_index]
+
+        # Evaluate the new individual
+        self.number_of_evaluations -= (1 - 1/self.dimensionality)
+
+        self.evaluate(new_individual)
+
+        if new_individual.fitness < individual.fitness:
+            raise ValueError("Fitness of new individual is lower than fitness of original individual")
+
+        return new_individual
+
+    # TODO: Speed up this function
+    def evaluate_single_node_flip_slow(self, individual: Individual, node_index):
+        # Check if node_index is in the genotype and give meaningful error message
+        assert (0 <= node_index < self.dimensionality), f"Node index {node_index} is not in the genotype"
+
+        # Create a copy of the individual
+        new_individual = individual.copy()
+
+        edge_list = np.any(self.edge_list == node_index, axis=1)
+
         # Get the edges that are affected by the node flip
-        edges_to_flip = self.edge_list[np.any(self.edge_list == node_index, axis=1)]
+        edges_to_flip = self.edge_list[edge_list]
 
         # Get the genotypes of the edges that are affected by the node flip
         genotypes_edges_to_flip = individual.genotype[edges_to_flip]
 
         # Get the indices of the edges that are affected by the node flip
-        indices_edges_to_flip = np.where(np.any(self.edge_list == node_index, axis=1))[0]
+        indices_edges_to_flip = np.where(edge_list)[0]
 
         # Get the weights of the edges that are affected by the node flip
         weights_edges_to_flip = self.weights[indices_edges_to_flip]
