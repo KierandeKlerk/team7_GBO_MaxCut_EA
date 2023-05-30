@@ -55,3 +55,9 @@ class MaxCut(FitnessFunction):
         individual.fitness = np.sum(self.weights[not_equal_indices])
         super().evaluate(individual)
 
+    def __repr__(self):
+        return f"MaxCut(dimensionality={self.dimensionality}, value_to_reach={self.value_to_reach})"
+
+    def __str__(self):
+        return self.__repr__()
+
