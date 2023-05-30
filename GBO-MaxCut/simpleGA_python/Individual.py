@@ -1,4 +1,5 @@
 import numpy as np
+import copy
 
 
 class Individual:
@@ -17,3 +18,6 @@ class Individual:
 
     def __str__(self):
         return self.__repr__()
+
+    def copy(self):
+        return copy.deepcopy(self)

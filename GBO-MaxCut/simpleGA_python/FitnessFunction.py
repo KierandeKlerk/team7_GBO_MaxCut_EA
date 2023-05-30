@@ -76,15 +76,20 @@ class MaxCut(FitnessFunction):
         weights_edges_to_flip = self.weights[indices_edges_to_flip]
 
         # Add the weights where indices are the same and subtract the weights where indices are different
-        fitness = individual.fitness + \
-                  np.sum(weights_edges_to_flip[genotypes_edges_to_flip[:, 0] == genotypes_edges_to_flip[:, 1]]) - \
+        fitness_addition = np.sum(weights_edges_to_flip[genotypes_edges_to_flip[:, 0] == genotypes_edges_to_flip[:, 1]]) - \
                   np.sum(weights_edges_to_flip[genotypes_edges_to_flip[:, 0] != genotypes_edges_to_flip[:, 1]])
+
+        if fitness_addition < 0:
+            raise ValueError("Fitness addition is negative")
 
         # Flip the genotype of the node
         new_individual.genotype[node_index] = 1 - new_individual.genotype[node_index]
 
         # Update the fitness of the new individual
-        new_individual.fitness = fitness
+        new_individual.fitness = individual.fitness + fitness_addition
+
+        if new_individual.fitness >= self.value_to_reach:
+            raise ValueToReachFoundException(new_individual)
 
         self.number_of_evaluations += (1/self.dimensionality)
 

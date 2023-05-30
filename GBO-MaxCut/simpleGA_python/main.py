@@ -10,8 +10,8 @@ if __name__ == "__main__":
     np.random.seed(42)
     start_time = time.time()
     crossovers = ["CustomCrossover", "UniformCrossover", "OnePointCrossover"]
+    inst = "maxcut-instances/setB/n0000196i02.txt"
     for cx in crossovers:
-        inst = "maxcut-instances/setB/n0000009i00.txt"
         with open(f"output-{cx}.txt", "w") as f:
             population_size = 500
             num_evaluations_list = []
@@ -20,7 +20,7 @@ if __name__ == "__main__":
             for i in range(num_runs):
                 fitness = FitnessFunction.MaxCut(inst)
                 genetic_algorithm = GeneticAlgorithm(fitness, population_size, variation=cx, evaluation_budget=100000,
-                                                     verbose=True)
+                                                     verbose=True, partial_evaluations=True)
                 best_fitness, num_evaluations = genetic_algorithm.run()
                 if best_fitness == fitness.value_to_reach:
                     num_success += 1

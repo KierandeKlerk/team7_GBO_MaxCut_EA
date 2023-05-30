@@ -20,6 +20,7 @@ class GeneticAlgorithm:
         self.number_of_generations = 0
         self.verbose = options.get("verbose", False)
         self.print_final_results = True
+        self.partial_evaluations = options.get("partial_evaluations", False)
 
     def _get_variation_operator(self, variation):
         match variation:
@@ -48,7 +49,6 @@ class GeneticAlgorithm:
                                                             self.population[order[2 * i + 1]])
         for individual in offspring:
             self.fitness.evaluate(individual)
-            self.fitness.evaluate_single_node_flip(individual, 19)
         return offspring
 
     def make_selection(self, offspring):
@@ -73,6 +73,18 @@ class GeneticAlgorithm:
                     self.print_statistics()
 
                 offspring = self.make_offspring()
+                if self.partial_evaluations:
+                    for individual in offspring:
+                        try:
+                            new_individual = self.fitness.evaluate_single_node_flip(individual, np.random.randint(0, self.fitness.dimensionality))
+                            # If the new individual is better than the old one, replace it
+                            if new_individual.fitness > individual.fitness:
+                                individual.fitness = new_individual.fitness
+                                individual.genotype = new_individual.genotype
+                        except ValueToReachFoundException as exception:
+                            raise exception
+                        except ValueError:
+                            pass
                 selection = self.make_selection(offspring)
                 self.population = selection
             if self.verbose:
