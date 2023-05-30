@@ -11,7 +11,7 @@ if __name__ == "__main__":
     start_time = time.time()
     crossovers = ["CustomCrossover", "UniformCrossover", "OnePointCrossover"]
     for cx in crossovers:
-        inst = "maxcut-instances/setE/n0000020i00.txt"
+        inst = "maxcut-instances/setB/n0000009i00.txt"
         with open(f"output-{cx}.txt", "w") as f:
             population_size = 500
             num_evaluations_list = []

@@ -48,6 +48,7 @@ class GeneticAlgorithm:
                                                             self.population[order[2 * i + 1]])
         for individual in offspring:
             self.fitness.evaluate(individual)
+            self.fitness.evaluate_single_node_flip(individual, 19)
         return offspring
 
     def make_selection(self, offspring):
