@@ -2,15 +2,20 @@ import numpy as np
 
 from GeneticAlgorithm import GeneticAlgorithm
 import FitnessFunction
+import time
+import numpy as np
 
 if __name__ == "__main__":
+    # Set the seed for reproducibility
+    np.random.seed(42)
+    start_time = time.time()
     crossovers = ["CustomCrossover", "UniformCrossover", "OnePointCrossover"]
     for cx in crossovers:
         inst = "maxcut-instances/setE/n0000020i00.txt"
         with open(f"output-{cx}.txt", "w") as f:
             population_size = 500
             num_evaluations_list = []
-            num_runs = 30
+            num_runs = 1
             num_success = 0
             for i in range(num_runs):
                 fitness = FitnessFunction.MaxCut(inst)
@@ -25,3 +30,5 @@ if __name__ == "__main__":
             percentiles = np.percentile(num_evaluations_list, [10, 50, 90])
             f.write("{} {} {} {} {}\n".format(population_size, num_success / num_runs, percentiles[0], percentiles[1],
                                               percentiles[2]))
+
+    print(f"Took {time.time() - start_time} seconds")
