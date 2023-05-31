@@ -12,7 +12,7 @@ def run_genetic_algorithm_pop_size_optimization(run_params):
     list_num_evaluations = []
     for _ in range(n_runs):
         fitness = FitnessFunction.MaxCut(inst)
-        genetic_algorithm = GeneticAlgorithm(fitness, population_size, variation=cx, evaluation_budget=1000000, verbose=False)
+        genetic_algorithm = GeneticAlgorithm(fitness, population_size, variation=cx, evaluation_budget=500000, verbose=False)
         best_fitness, num_evaluations = genetic_algorithm.run()
         list_num_evaluations.append(num_evaluations)
         if best_fitness != fitness.value_to_reach: 
