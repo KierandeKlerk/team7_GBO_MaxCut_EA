@@ -32,17 +32,16 @@ def pop_size_optimization(set):
     os.makedirs(dirOut,exist_ok=True)
 
     filesIn = [os.path.join(dirIn, file) for file in os.listdir(dirIn) if file.endswith(".txt")]
-    num_files_in = len(filesIn)
     filesIn.sort()
 
-    n_runs = 30
+    n_runs = 10
 
     for cx in crossovers:
         file_out = "output-pop_size-{}_{}.csv".format(cx, currentDT.strftime("%d-%m-%Y_%H-%M"))
         with open(os.path.join(dirOut,file_out),"w") as f:
-            f.write("dimensionality, num_edges, population_size, success, median_num_eval\n")
+            f.write("dimensionality,num_edges,population_size,success,median_num_eval\n")
             
-            run_params = [(inst, population_size, cx, n_runs) for inst in filesIn[0::10] for population_size in [10, 50, 100, 500, 1000, 5000, 10000, 50000]]
+            run_params = [(inst, population_size, cx, n_runs) for inst in filesIn[0::10] for population_size in [10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000]]
             
             pool = mp.Pool()  # creates a pool of worker processes
             results = pool.map(run_genetic_algorithm_pop_size_optimization, run_params)
