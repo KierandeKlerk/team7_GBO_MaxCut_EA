@@ -1,0 +1,450 @@
+File: n0000080i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6604.49999999925
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 7197.5
+
+File: n0000040i06.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3851.000000000216
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 4202.5
+
+File: n0000020i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 1645.4999999999545
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 2170.0
+
+File: n0000160i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 12346.875000002648
+
+Partial Evaluations: False
+Success Rate: 7/2 runs successful
+Median Evaluations: 13831.5
+
+File: n0000020i00.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 1163.9999999999773
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 1335.0
+
+File: n0000080i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6597.874999999295
+
+Partial Evaluations: False
+Success Rate: 9/2 runs successful
+Median Evaluations: 6933.5
+
+File: n0000080i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6829.99999999925
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 7507.0
+
+File: n0000010i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 108.5
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 190.0
+
+File: n0000010i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 155.5
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 150.0
+
+File: n0000040i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3652.000000000216
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 3694.0
+
+File: n0000020i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 1934.9999999999545
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 1962.0
+
+File: n0000010i06.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 389.0
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 702.0
+
+File: n0000020i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 1827.4999999999545
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 1819.0
+
+File: n0000040i00.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3771.500000000216
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 3984.0
+
+File: n0000080i06.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6581.49999999925
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 7039.5
+
+File: n0000040i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3683.500000000216
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 3746.5
+
+File: n0000040i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3967.500000000216
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 4061.5
+
+File: n0000010i08.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 74.5
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 51.0
+
+File: n0000040i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3621.700000000202
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 4081.5
+
+File: n0000160i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 11202.125000002285
+
+Partial Evaluations: False
+Success Rate: 6/2 runs successful
+Median Evaluations: 12775.0
+
+File: n0000020i08.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 1790.9999999999545
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 1884.5
+
+File: n0000080i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6837.49999999925
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 7160.0
+
+File: n0000020i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 2001.9999999999545
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 1970.0
+
+File: n0000020i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 1665.9999999999545
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 1938.0
+
+File: n0000080i08.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6825.49999999925
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 7265.0
+
+File: n0000010i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 189.5
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 185.0
+
+File: n0000010i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 472.0
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 502.5
+
+File: n0000160i00.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 11257.625000002285
+
+Partial Evaluations: False
+Success Rate: 9/2 runs successful
+Median Evaluations: 11652.0
+
+File: n0000160i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 11674.250000002467
+
+Partial Evaluations: False
+Success Rate: 8/2 runs successful
+Median Evaluations: 11725.5
+
+File: n0000020i06.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 2002.1249999999568
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 2269.5
+
+File: n0000040i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3736.000000000216
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 4435.0
+
+File: n0000020i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 1995.5
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 2057.5
+
+File: n0000010i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 217.0
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 121.5
+
+File: n0000080i00.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6786.49999999925
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 7045.0
+
+File: n0000080i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6701.99999999925
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 6864.5
+
+File: n0000040i08.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3586.0250000002034
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 3927.5
+
+File: n0000160i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 11704.750000002467
+
+Partial Evaluations: False
+Success Rate: 7/2 runs successful
+Median Evaluations: 12502.0
+
+File: n0000020i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 2069.650000000017
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 2095.0
+
+File: n0000010i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 284.0
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 311.5
+
+File: n0000040i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3635.500000000216
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 4434.0
+
+File: n0000160i08.txt
+Partial Evaluations: True
+Success Rate: 9/2 runs successful
+Median Evaluations: 11896.250000002467
+
+Partial Evaluations: False
+Success Rate: 7/2 runs successful
+Median Evaluations: 12532.0
+
+File: n0000080i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6642.49999999925
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 6906.0
+
+File: n0000010i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 678.0
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 516.0
+
+File: n0000160i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 11172.125000002285
+
+Partial Evaluations: False
+Success Rate: 9/2 runs successful
+Median Evaluations: 11726.5
+
+File: n0000040i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 3648.500000000216
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 3667.5
+
+File: n0000080i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 6223.249999999341
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 6433.0
+
+File: n0000010i00.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 330.0
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Median Evaluations: 237.5
+
+File: n0000160i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 10972.500000002103
+
+Partial Evaluations: False
+Success Rate: 8/2 runs successful
+Median Evaluations: 11782.5
+
+File: n0000160i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Median Evaluations: 10579.000000002103
+
+Partial Evaluations: False
+Success Rate: 9/2 runs successful
+Median Evaluations: 11033.0
+
+File: n0000160i06.txt
+Partial Evaluations: True
+Success Rate: 9/2 runs successful
+Median Evaluations: 11565.687500002376
+
+Partial Evaluations: False
+Success Rate: 5/2 runs successful
+Median Evaluations: 56091.5
+

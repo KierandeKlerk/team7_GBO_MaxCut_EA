@@ -1,0 +1,450 @@
+File: n0000080i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6641.249999999268
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 7251.1
+
+File: n0000040i06.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3672.3000000002066
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 4013.3
+
+File: n0000020i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1812.9599999999875
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1935.4
+
+File: n0000160i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 11707.653750002431
+
+Partial Evaluations: False
+Success Rate: 6/2 runs successful
+Mean Evaluations: 47490.9
+
+File: n0000020i00.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1042.9099999999812
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1211.9
+
+File: n0000080i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6712.37499999926
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 7224.4
+
+File: n0000080i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6771.849999999232
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 7403.8
+
+File: n0000010i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 276.2
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 243.5
+
+File: n0000010i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 431.71000000000004
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 163.9
+
+File: n0000040i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3651.035000000195
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 4038.8
+
+File: n0000020i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1865.9399999999937
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1941.5
+
+File: n0000010i06.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 499.5199999999997
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 293.0
+
+File: n0000020i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1564.0249999999712
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 2174.7
+
+File: n0000040i00.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 4000.750000000239
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 4038.5
+
+File: n0000080i06.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6802.69999999925
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 7351.8
+
+File: n0000040i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3646.9000000002065
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3950.6
+
+File: n0000040i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3952.4000000002343
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 4447.3
+
+File: n0000010i08.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 58.1
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 134.3
+
+File: n0000040i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3935.0500000002385
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 4000.9
+
+File: n0000160i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 11455.775000002357
+
+Partial Evaluations: False
+Success Rate: 8/2 runs successful
+Mean Evaluations: 29222.6
+
+File: n0000020i08.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1628.0449999999669
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1827.9
+
+File: n0000080i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6810.644999999236
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 7389.7
+
+File: n0000020i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1973.3649999999973
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1980.8
+
+File: n0000020i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1873.944999999964
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1812.9
+
+File: n0000080i08.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6954.808749999216
+
+Partial Evaluations: False
+Success Rate: 9/2 runs successful
+Mean Evaluations: 16537.2
+
+File: n0000010i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 188.5
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 219.4
+
+File: n0000010i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 516.8400000000004
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 348.7
+
+File: n0000160i00.txt
+Partial Evaluations: True
+Success Rate: 8/2 runs successful
+Mean Evaluations: 28797.500000028474
+
+Partial Evaluations: False
+Success Rate: 7/2 runs successful
+Mean Evaluations: 37985.3
+
+File: n0000160i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 11399.288125002353
+
+Partial Evaluations: False
+Success Rate: 8/2 runs successful
+Mean Evaluations: 29438.3
+
+File: n0000020i06.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1939.900000000011
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 2370.4
+
+File: n0000040i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3850.2000000002254
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 4192.0
+
+File: n0000020i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1872.2599999999934
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1743.6
+
+File: n0000010i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 337.0
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 290.6
+
+File: n0000080i00.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6659.249999999267
+
+Partial Evaluations: False
+Success Rate: 9/2 runs successful
+Mean Evaluations: 16663.4
+
+File: n0000080i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6834.949999999231
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 7434.3
+
+File: n0000040i08.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3569.400000000175
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3868.0
+
+File: n0000160i04.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 11628.525000002432
+
+Partial Evaluations: False
+Success Rate: 3/2 runs successful
+Mean Evaluations: 73379.7
+
+File: n0000020i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 1975.6999999999978
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 2092.9
+
+File: n0000010i03.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 611.2100000000007
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 610.4
+
+File: n0000040i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3829.6000000002023
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 4246.4
+
+File: n0000160i08.txt
+Partial Evaluations: True
+Success Rate: 8/2 runs successful
+Mean Evaluations: 29504.862500028714
+
+Partial Evaluations: False
+Success Rate: 3/2 runs successful
+Mean Evaluations: 73689.8
+
+File: n0000080i02.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6997.799999999214
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 7073.3
+
+File: n0000010i07.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 549.5199999999991
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 317.7
+
+File: n0000160i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 11317.862500002338
+
+Partial Evaluations: False
+Success Rate: 5/2 runs successful
+Mean Evaluations: 55744.8
+
+File: n0000040i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3783.20000000022
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 3628.0
+
+File: n0000080i05.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6293.899999999322
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 6442.7
+
+File: n0000010i00.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 416.8
+
+Partial Evaluations: False
+Success Rate: 10/2 runs successful
+Mean Evaluations: 475.7
+
+File: n0000160i01.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 11192.112500002268
+
+Partial Evaluations: False
+Success Rate: 6/2 runs successful
+Mean Evaluations: 46814.6
+
+File: n0000160i09.txt
+Partial Evaluations: True
+Success Rate: 10/2 runs successful
+Mean Evaluations: 10879.450000002176
+
+Partial Evaluations: False
+Success Rate: 8/2 runs successful
+Mean Evaluations: 29113.9
+
+File: n0000160i06.txt
+Partial Evaluations: True
+Success Rate: 9/2 runs successful
+Mean Evaluations: 20451.112500015526
+
+Partial Evaluations: False
+Success Rate: 8/2 runs successful
+Mean Evaluations: 29872.7
+
