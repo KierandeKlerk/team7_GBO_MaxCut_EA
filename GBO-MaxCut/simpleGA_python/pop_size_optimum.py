@@ -54,6 +54,6 @@ def pop_size_optimization(set):
 
             pool.close()  # close the pool to prevent any more tasks from being submitted
             pool.join()  # wait for all the worker processes to terminate
-
+            
 if __name__ == "__main__":
     pop_size_optimization("A")
