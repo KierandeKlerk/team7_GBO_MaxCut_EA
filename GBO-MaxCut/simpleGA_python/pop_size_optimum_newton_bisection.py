@@ -6,6 +6,9 @@ import numpy as np
 from GeneticAlgorithm import GeneticAlgorithm
 import FitnessFunction
 
+def round_even(x):
+    return round(x / 2) * 2
+
 def run_genetic_algorithm_pop_size_optimization(run_params):
     inst, population_size, cx, evaluation_budget = run_params
     success = False
@@ -23,47 +26,40 @@ def run_genetic_algorithm_pop_size_optimization(run_params):
     return success, num_evaluations
 
    
-def newton_bisection_run(inst, cx, precision, n_runs):
-    with open(inst,"r") as f:
+def newton_bisection_run(insts, cx, precision, n_runs):
+    with open(insts[0],"r") as f:
         lines = f.readlines()
         line = lines[0].split()
         dimensionality = int(line[0])
         num_edges = int(line[1])
-    evaluation_budget = 200*dimensionality*num_edges
+    evaluation_budget = 300*dimensionality*num_edges
 
-    lower_bound = int(4)
-    upper_bound = int(round(10*num_edges*dimensionality, -1))
+    lower_bound = int(0)
+    upper_bound = round_even(10*num_edges*dimensionality)
+    median_num_evaluations_upper = None
     width = upper_bound - lower_bound
 
     optimal = int(upper_bound)
-    success_lower=False
     success_upper=False
-    print("Lower, Dimensionality: {}, cx: {}".format(dimensionality, cx))
-    with mp.Pool() as pool:
-        results_lower = np.array(list(pool.imap_unordered(run_genetic_algorithm_pop_size_optimization, [(inst, lower_bound, cx, evaluation_budget)]*n_runs) ))
-        success_lower = np.all(results_lower[:,0]==1)
-
-
-    if not success_lower:
-        print("Upper, Dimensionality: {}, cx: {}".format(dimensionality, cx))
-        with mp.Pool() as pool:
-            results_upper = np.array(list(pool.imap_unordered(run_genetic_algorithm_pop_size_optimization, [(inst, upper_bound, cx, evaluation_budget)]*n_runs) ))
-            success_upper = np.all(results_upper[:,0]==1)
-            median_num_evaluations_upper = np.median(results_upper[:,1])
-        if not success_upper:
-            print("Upper bound was too low")
-            return cx, optimal, dimensionality, median_num_evaluations_upper, False
-    else:
-        print("Lower bound was too high")
-        return cx, optimal, dimensionality, median_num_evaluations_upper, False
         
     
-    while width/optimal > precision:
-        middle_bound = int(round((lower_bound + upper_bound) / 2, -1))
+    print("Upper, Dimensionality: {}, cx: {}".format(dimensionality, cx))
+    with mp.Pool() as pool:
+        results_upper = np.array(list(pool.imap_unordered(run_genetic_algorithm_pop_size_optimization, [(inst, upper_bound, cx, evaluation_budget) for inst in insts]) ))
+        success_upper = np.all(results_upper[:,0]==1)
+        median_num_evaluations_upper = np.median(results_upper[:,1])
+    if not success_upper:
+        print("Upper bound was too low")
+        return cx, optimal, dimensionality, median_num_evaluations_upper, False
+    
+        
+    
+    while width/optimal >= precision:
+        middle_bound = round_even((lower_bound + upper_bound) / 2)
 
         print("Middle, Dimensionality: {}, cx: {}".format(dimensionality, cx))
         with mp.Pool() as pool:
-            results_middle = np.array(list(pool.imap_unordered(run_genetic_algorithm_pop_size_optimization, [(inst, middle_bound, cx, evaluation_budget)]*n_runs) ))
+            results_middle = np.array(list(pool.imap_unordered(run_genetic_algorithm_pop_size_optimization, [(inst, middle_bound, cx, evaluation_budget) for inst in insts]) ))
             success_middle = np.all(results_middle[:,0]==1)
             median_num_evaluations_middle = np.median(results_middle[:,1])
         
@@ -78,6 +74,7 @@ def newton_bisection_run(inst, cx, precision, n_runs):
             median_num_evaluations_lower = median_num_evaluations_middle
             median_num_evaluations_optimal = median_num_evaluations_upper
         width = upper_bound - lower_bound
+        print("Lower bound: {}, Upper bound: {}, Optimal: {}, Width: {}, Ratio {}".format(lower_bound, upper_bound, optimal, width, width/optimal))
     return cx, optimal, dimensionality, median_num_evaluations_optimal, True
     
 
@@ -93,20 +90,18 @@ def pop_size_optimization_bisection(set):
     os.makedirs(dirOut,exist_ok=True)
 
     filesIn = [os.path.join(dirIn, file) for file in os.listdir(dirIn) if file.endswith(".txt")]
-    filesIn.sort()
-    filesIn = filesIn[0::10]
-    
+    filesIn.sort()    
     
     n_runs = 10
-    precision = 0.1
+    precision = 0.2501
     
     with open(os.path.join(dirOut,"output-pop_size_newton-{}.csv".format(currentDT.strftime("%d-%m-%Y_%H-%M"))),"w") as f:
-        bisection_params = [(inst, cx, precision, n_runs) for inst in filesIn for cx in crossovers]
+
         f.write("Crossover, Dimensionality, Population size, Success, Median num evaluations\n")
-        for cx in crossovers:
-            for inst in filesIn:
-                result = newton_bisection_run(inst, cx, precision, n_runs)
         
+        for i in range(int(len(filesIn)/10)):
+            for cx in crossovers:
+                result = newton_bisection_run(filesIn[0+i*10:10+i*10], cx, precision, n_runs)
                 
                 cx, optimal_pop_size, dimensionality, median_num_evaluations_optimal, success = result
                 f.write("{},{},{},{},{}\n".format(cx, dimensionality, optimal_pop_size, success, median_num_evaluations_optimal))
@@ -118,5 +113,5 @@ def pop_size_optimization_bisection(set):
      
     
 if __name__ == "__main__":
-    pop_size_optimization_bisection("A")
+    pop_size_optimization_bisection("D")
 
