@@ -76,7 +76,7 @@ class GeneticAlgorithm:
                 if self.partial_evaluations:
                     for individual in offspring:
                         try:
-                            new_individual = self.fitness.evaluate_single_node_flip_slow(individual, np.random.randint(0, self.fitness.dimensionality))
+                            new_individual = self.fitness.evaluate_single_node_flip(individual, np.random.randint(0, self.fitness.dimensionality))
                             # If the new individual is better than the old one, replace it
                             if new_individual.fitness > individual.fitness:
                                 individual.fitness = new_individual.fitness
