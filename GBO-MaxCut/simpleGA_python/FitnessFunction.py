@@ -65,17 +65,6 @@ class MaxCut(FitnessFunction):
     def get_degree( self, v ):
         return len(self.adjacency_list(v))
 
-    def evaluate( self, individual: Individual ):
-        result = 0
-        for e in self.edge_list:
-            v0, v1 = e
-            w = self.weights[e]
-            if( individual.genotype[v0] != individual.genotype[v1] ):
-                result += w
-
-        individual.fitness = result
-        super().evaluate(individual)
-
     def evaluate_single_node_flip(self, individual: Individual, node_index):
         # Check if node_index is in the genotype and give meaningful error message
         assert (0 <= node_index < self.dimensionality), f"Node index {node_index} is not in the genotype"

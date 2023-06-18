@@ -46,7 +46,8 @@ def process_file(filepath, partial_evaluations):
         if best_fitness == fitness.value_to_reach:
             num_success += 1
         num_evaluations_list.append(num_evaluations)
-    return num_success, np.mean(num_evaluations_list)  # Use np.mean for average/mean calculation
+    return num_success, np.mean(num_evaluations_list), fitness.dimensionality
+
 
 def multiprocessing_main():
     folder_path = "maxcut-instances/setD"
@@ -64,95 +65,87 @@ def multiprocessing_main():
         pool.close()
         pool.join()
 
-    with open("mean_evaluations.txt", "w") as file:  # Rename the output file to "mean_evaluations.txt"
+    with open("mean_evaluations.txt", "w") as file:
         for i, (result_partial, result_no_partial) in enumerate(zip(results_partial_eval, results_no_partial_eval)):
-            success_partial, mean_eval_partial = result_partial.get()  # Rename median_eval_partial to mean_eval_partial
-            success_no_partial, mean_eval_no_partial = result_no_partial.get()  # Rename median_eval_no_partial to mean_eval_no_partial
+            success_partial, mean_eval_partial, dimensionality_partial = result_partial.get()
+            success_no_partial, mean_eval_no_partial, dimensionality_no_partial = result_no_partial.get()
             filename = file_list[i]
             file.write("File: {}\n".format(filename))
+            file.write("Dimensionality: {}\n".format(dimensionality_partial))
             file.write("Partial Evaluations: True\n")
             file.write("Success Rate: {}/2 runs successful\n".format(success_partial))
-            file.write("Mean Evaluations: {}\n\n".format(mean_eval_partial))  # Rename Median Evaluations to Mean Evaluations
+            file.write("Mean Evaluations: {}\n\n".format(mean_eval_partial))
             file.write("Partial Evaluations: False\n")
             file.write("Success Rate: {}/2 runs successful\n".format(success_no_partial))
-            file.write("Mean Evaluations: {}\n\n".format(mean_eval_no_partial))  # Rename Median Evaluations to Mean Evaluations
+            file.write("Mean Evaluations: {}\n\n".format(mean_eval_no_partial))
             print("File: {}".format(filename))
+            print(f"Dimensionality: {dimensionality_partial}")
             print("Partial Evaluations: True")
             print("Success Rate: {}/2 runs successful".format(success_partial))
-            print("Mean Evaluations: {}\n".format(mean_eval_partial))  # Rename Median Evaluations to Mean Evaluations
+            print("Mean Evaluations: {}\n".format(mean_eval_partial))
             print("Partial Evaluations: False")
             print("Success Rate: {}/2 runs successful".format(success_no_partial))
-            print("Mean Evaluations: {}\n".format(mean_eval_no_partial))  # Rename Median Evaluations to Mean Evaluations
+            print("Mean Evaluations: {}\n".format(mean_eval_no_partial))
 
-    # Plotting
     plot_comparison(file_list, results_partial_eval, results_no_partial_eval)
 
+
 def plot_comparison(file_list, results_partial_eval, results_no_partial_eval):
+    mean_evaluations_partial = []
     success_rates_partial = []
-    mean_evaluations_partial = []  # Rename median_evaluations_partial to mean_evaluations_partial
+    mean_evaluations_no_partial = []
     success_rates_no_partial = []
-    mean_evaluations_no_partial = []  # Rename median_evaluations_no_partial to mean_evaluations_no_partial
+    dimensionality_partial_array = []
 
     for result_partial, result_no_partial in zip(results_partial_eval, results_no_partial_eval):
-        success_partial, mean_eval_partial = result_partial.get()  # Rename median_eval_partial to mean_eval_partial
-        success_no_partial, mean_eval_no_partial = result_no_partial.get()  # Rename median_eval_no_partial to mean_eval_no_partial
-        success_rates_partial.append(success_partial)
-        mean_evaluations_partial.append(mean_eval_partial)  # Rename median_evaluations_partial to mean_evaluations_partial
-        success_rates_no_partial.append(success_no_partial)
-        mean_evaluations_no_partial.append(mean_eval_no_partial)  # Rename median_evaluations_no_partial to mean_evaluations_no_partial
+        success_partial, mean_eval_partial, dimensionality_partial = result_partial.get()
+        success_no_partial, mean_eval_no_partial, dimensionality_no_partial = result_no_partial.get()
+        success_rates_partial.append(success_partial / 10 * 100)
+        mean_evaluations_partial.append(mean_eval_partial)
+        success_rates_no_partial.append(success_no_partial / 10 * 100)
+        mean_evaluations_no_partial.append(mean_eval_no_partial)
+        dimensionality_partial_array.append(dimensionality_partial)
 
-    x = np.arange(len(file_list))
-    width = 0.35
+    # Sort the dimensionalities and corresponding data lists
+    sorted_indices = np.argsort(dimensionality_partial_array)
+    dimensionality_partial_array = np.array(dimensionality_partial_array)[sorted_indices]
+    mean_evaluations_partial = np.array(mean_evaluations_partial)[sorted_indices]
+    mean_evaluations_no_partial = np.array(mean_evaluations_no_partial)[sorted_indices]
+    success_rates_partial = np.array(success_rates_partial)[sorted_indices]
+    success_rates_no_partial = np.array(success_rates_no_partial)[sorted_indices]
 
-    fig, ax = plt.subplots(figsize=(12, 8))
-    rects1 = ax.bar(x - width/2, success_rates_partial, width, label='Partial Evaluations: True')
-    rects2 = ax.bar(x + width/2, success_rates_no_partial, width, label='Partial Evaluations: False')
+    x_ticks = list(range(len(dimensionality_partial_array)))
 
-    ax.set_xticks(x)
-    ax.set_xticklabels(file_list, rotation=45, ha='right')
-    ax.set_ylabel('Success Rate')
-    ax.set_xlabel('File')
-    ax.set_title('Success Rate Comparison')
-    ax.legend()
+    fig, ax1 = plt.subplots(figsize=(12, 8))
 
-    autolabel(rects1, ax)
-    autolabel(rects2, ax)
+    color = 'tab:red'
+    ax1.set_xlabel('Dimensionality')
+    ax1.set_ylabel('Mean Evaluations', color=color)
+    ax1.plot(x_ticks, mean_evaluations_partial, color=color, label='Partial Evaluations: True')
+    ax1.plot(x_ticks, mean_evaluations_no_partial, '--', color=color, label='Partial Evaluations: False')
+    ax1.tick_params(axis='y', labelcolor=color)
 
-    plt.tight_layout()
-    plt.savefig("success_rate_comparison.png", dpi=300)
+    ax2 = ax1.twinx()
+    color = 'tab:blue'
+    ax2.set_ylabel('Success Rate (%)', color=color)
+    ax2.plot(x_ticks, success_rates_partial, color=color, label='Partial Evaluations: True')
+    ax2.plot(x_ticks, success_rates_no_partial, '--', color=color, label='Partial Evaluations: False')
+    ax2.tick_params(axis='y', labelcolor=color)
+
+    ax1.set_xticks(x_ticks)
+    ax1.set_xticklabels(dimensionality_partial_array, rotation=45)
+    ax1.set_title('Mean Evaluations and Success Rate Comparison')
+    ax1.legend(loc='upper left')
+    ax2.legend(loc='upper right')
+
+    fig.tight_layout()
+    plt.savefig("mean_evaluations_and_success_rate_comparison.png", dpi=300)
     plt.close()
 
-    fig, ax = plt.subplots(figsize=(12, 8))
-    rects1 = ax.bar(x - width/2, mean_evaluations_partial, width, label='Partial Evaluations: True')  # Rename median_evaluations_partial to mean_evaluations_partial
-    rects2 = ax.bar(x + width/2, mean_evaluations_no_partial, width, label='Partial Evaluations: False')  # Rename median_evaluations_no_partial to mean_evaluations_no_partial
-
-    ax.set_xticks(x)
-    ax.set_xticklabels(file_list, rotation=45, ha='right')
-    ax.set_ylabel('Mean Evaluations')  # Rename Median Evaluations to Mean Evaluations
-    ax.set_xlabel('File')
-    ax.set_title('Mean Evaluations Comparison')  # Rename Median Evaluations to Mean Evaluations
-    ax.legend()
-
-    autolabel(rects1, ax)
-    autolabel(rects2, ax)
-
-    plt.tight_layout()
-    plt.savefig("mean_evaluations_comparison.png", dpi=300)  # Rename the output file to "mean_evaluations_comparison.png"
-    plt.close()
-
-def autolabel(rects, ax):
-    for rect in rects:
-        height = rect.get_height()
-        ax.annotate('{:.2f}'.format(height),
-                    xy=(rect.get_x() + rect.get_width() / 2, height),
-                    xytext=(0, 3),
-                    textcoords="offset points",
-                    ha='center', va='bottom',
-                    fontsize=8)
 
 if __name__ == "__main__":
     # Set the seed for reproducibility
-    # np.random.seed(42)
+    np.random.seed(42)
     start_time = time.time()
     multiprocessing_main()
     print(f"Took {time.time() - start_time} seconds")
