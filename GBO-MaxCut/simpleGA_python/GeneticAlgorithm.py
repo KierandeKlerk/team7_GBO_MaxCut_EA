@@ -31,7 +31,7 @@ class GeneticAlgorithm:
             case "TwoPointCrossover":
                 return Variation.two_point_crossover
             case "CustomCrossover":
-                return partial(Variation.grouped_uniform_crossover, self.fitness)
+                return partial(Variation.grouped_uniform_crossover_with_mutation, self.fitness)
             case _:
                 raise ValueError(f"Unknown variation operator: {variation}")
 
