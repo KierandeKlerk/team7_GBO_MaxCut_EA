@@ -1,7 +1,0 @@
-Crossover, Dimensionality, Population size, Success, Median num evaluations
-UniformCrossover,10,84,True,151.5
-OnePointCrossover,10,132,True,188.0
-UniformCrossover,20,538,True,3536.0
-OnePointCrossover,20,1076,True,7211.5
-UniformCrossover,40,34800,False,564982.5
-OnePointCrossover,40,34800,False,663944.0
