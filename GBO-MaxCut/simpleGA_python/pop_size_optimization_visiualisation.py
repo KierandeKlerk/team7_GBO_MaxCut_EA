@@ -18,7 +18,7 @@ def plot_pop_size_optimization():
             dirIn = "output/set{}".format(set)
             filesIn = [os.path.join(dirIn, file) for file in os.listdir(dirIn) if file.startswith("output-pop_size-{}".format(cx))]
             filesIn.sort()
-            df = pd.read_csv(filesIn[0], header = 0, index_col = False, skipinitialspace = True)
+            df = pd.read_csv(filesIn[-1], header = 0, index_col = False, skipinitialspace = True)
             df = df[df["success"]]
             df = df.groupby(["dimensionality"]).first().reset_index()
             print(df)
